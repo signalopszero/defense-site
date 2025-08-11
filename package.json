@@ -7,24 +7,27 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cf:prepare": "next build && npx @cloudflare/next-on-pages"
+
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
+    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
-    "autoprefixer": "10.4.12",
-    "framer-motion": "10.12.7",
-    "lucide-react": "0.287.0",
-    "next": "13.5.6",
-    "postcss": "8.4.16",
+    "next": "13.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "typescript": "5.2.2",
     "tailwindcss": "3.3.2",
-    "typescript": "5.2.2"
+    "autoprefixer": "10.4.12",
+    "postcss": "8.4.16",
+    "framer-motion": "10.12.7",
+    "lucide-react": "0.287.0"
   },
   "devDependencies": {
-    "@types/node": "^18.19.122",
-    "@types/react": "^18.3.23",
     "eslint": "8.40.0",
     "eslint-config-next": "13.5.4",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "@cloudflare/next-on-pages": "^1.13.13",
+    "wrangler": "^3.20.0"
   }
 }
