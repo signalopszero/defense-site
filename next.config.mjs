@@ -3,9 +3,6 @@
  */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
   images: {
     // restrict remote images; all assets served from /public
     domains: [],
