@@ -1,0 +1,15 @@
+## Wrangler configuration for deploying to Cloudflare Pages
+##
+## See the Cloudflare documentation for details on these options. The
+## `name` is an arbitrary identifier for your Pages project. The
+## `pages_build_output_dir` must point to the static output directory
+## produced by the `@cloudflare/next-on-pages` build step.  The
+## `compatibility_date` specifies the date on which the Cloudflare
+## runtime behaviour is fixed; set it to today's date to opt in to the
+## latest features.  The `nodejs_compat` flag enables Node.js APIs in
+## the Workers runtime and is required for Next.js applications【425952267815898†L94-L104】.
+
+name = "defense-site"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_date = "2025-08-10"
+compatibility_flags = ["nodejs_compat"]
